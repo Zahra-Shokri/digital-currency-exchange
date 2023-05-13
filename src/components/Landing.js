@@ -35,23 +35,25 @@ const Landing = () => {
     return(
         <>
             <input type='text' onChange={searchHandler} value={search} placeholder='Search' />
-            {
-                (coins.length) ?
-                    searchedCoins.map(coin => 
-                        <Coin key={coin.id}
-                        symbol={coin.symbol}
-                        name={coin.name}
-                        image={coin.image} 
-                        currentPrice={coin.current_price} 
-                        marketCap={coin.market_cap} 
-                        priceChangePercentage={coin.price_change_percentage_24h} 
-                    />) 
-                    : 
-                <div>
-                    <img src={snipperGif} alt='Snipper Gif' />
-                    <p> Loading... </p>
+                <div className={styles.coinContainer}>
+                    {
+                        (coins.length) ?
+                            searchedCoins.map(coin => 
+                                <Coin key={coin.id}
+                                symbol={coin.symbol}
+                                name={coin.name}
+                                image={coin.image} 
+                                currentPrice={coin.current_price} 
+                                marketCap={coin.market_cap} 
+                                priceChangePercentage={coin.price_change_percentage_24h} 
+                                />) 
+                            : 
+                        <div className={styles.spinnerGif}>
+                            <img src={snipperGif} alt='Snipper Gif' />
+                            <p> Loading... </p>
+                        </div>
+                    }
                 </div>
-            }
         </>
     );
 }
