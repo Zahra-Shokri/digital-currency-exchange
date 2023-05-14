@@ -5,10 +5,13 @@ import spinner from '../gif/spinner.gif'
 
 
 const Loader = () => {
+    const loading = { color: 'rgb(85, 85, 85)' };
+    const container = { display: 'flex', alignItems: 'center', flexDirection: 'column' };
+    
     return (
-        <div>
+        <div style={container}>
             <img src={spinner} alt='Loading' />
-            <h1>Loading ...</h1>
+            <h2 style={loading}>Loading ...</h2>
         </div>
     );
 };
