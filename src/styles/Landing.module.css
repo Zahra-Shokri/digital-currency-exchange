@@ -1,0 +1,62 @@
+.container, .titleCoin {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.topOfPage {
+    display: flex;
+    margin: 40px 0;
+    align-items: center;
+    flex-direction: column;
+}
+
+.topOfPage h2 {
+    margin-bottom: 30px;
+    color: rgb(85, 85, 85);
+}
+
+.topOfPage input {
+    width: 300px;
+    height: 30px;
+    font-size: 16px;
+    padding: 3px 6px;
+    border-radius: 5px;
+    transition: all 0.2s ease;
+    border: 1px solid silver;
+    background-color: #f6f6f6;
+}
+
+.topOfPage input:focus {
+    outline: none;
+    box-shadow: rgba(74, 74, 74, 0.24) 0px 3px 8px;
+}
+
+.coinContainer {
+    border-radius: 10px;
+    background-color: #f6f6f6;
+    border: 1px solid silver;
+}
+
+.titleCoin {
+    margin-top: 20px;
+    padding-bottom: 20px;
+    flex-direction: unset;
+    justify-content: space-around;
+    border-bottom: 1px solid silver;
+}
+
+.titleCoin p {
+    font-size: 15px;
+    margin-left: 35px;
+    font-weight: bold;
+    color: rgb(83, 83, 83);
+}
+
+.titleCoin p:nth-child(3) {
+    margin-left: 50px;
+}
+
+.titleCoin p:nth-child(5) {
+    margin-right: 10px;
+}

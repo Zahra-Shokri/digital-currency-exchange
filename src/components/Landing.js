@@ -31,11 +31,21 @@ const Landing = () => {
     const searchedCoins = coins.filter(coin => coin.name.toLowerCase().includes(search.toLowerCase()))
 
     return(
-        <>
-            <input type='text' onChange={searchHandler} value={search} placeholder='Search' />
+        <div className={styles.container}>
+            <div className={styles.topOfPage}>
+                <h2> Welcome to Exchange Currences :) </h2>
+                <input type='text' onChange={searchHandler} value={search} placeholder='Search' />
+            </div>
                 {
                     (coins.length) ?
                         <div className={styles.coinContainer}>
+                            <div className={styles.titleCoin}>
+                                <p> Name </p>
+                                <p> Symbol </p>
+                                <p> Price </p>
+                                <p> Change Price </p>
+                                <p> Market Cap </p>
+                            </div>
                         {
                             searchedCoins.map(coin => 
                                 <Coin key={coin.id}
@@ -51,7 +61,7 @@ const Landing = () => {
                     
                     <Loader />
                 }
-        </>
+        </div>
     );
 }
 
