@@ -8,11 +8,11 @@ const Coin = ({ symbol, name, image, currentPrice, marketCap, priceChangePercent
     return(
         <div className={styles.container}>
             <img src={image} alt='Currency Logo' />
-            <p> {symbol.toUpperCase()} </p>
             <p> {name} </p>
-            <p> {currentPrice.toLocalString()} </p>
-            <p> {marketCap} </p>
-            <p> {priceChangePercentage.toLocalString()} </p>
+            <p> {symbol.toUpperCase()} </p>
+            <p> $ {currentPrice.toLocaleString()} </p>
+            <p> {priceChangePercentage} </p>
+            <p> {marketCap.toLocaleString()} </p>
         </div>
     );
 }
