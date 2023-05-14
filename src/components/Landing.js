@@ -2,12 +2,10 @@ import React, { useEffect, useState } from 'react';
 
 // Components
 import Coin from './Coin';
+import Loader from './Loader';
 
 // API
 import { getAPI } from '../services/api';
-
-// Gifs
-import snipperGif from '../gif/spinner.gif';
 
 // Styles
 import styles from '../styles/Landing.module.css';
@@ -35,25 +33,24 @@ const Landing = () => {
     return(
         <>
             <input type='text' onChange={searchHandler} value={search} placeholder='Search' />
-                <div className={styles.coinContainer}>
-                    {
-                        (coins.length) ?
+                {
+                    (coins.length) ?
+                        <div className={styles.coinContainer}>
+                        {
                             searchedCoins.map(coin => 
                                 <Coin key={coin.id}
-                                symbol={coin.symbol}
                                 name={coin.name}
                                 image={coin.image} 
-                                currentPrice={coin.current_price} 
+                                symbol={coin.symbol}
                                 marketCap={coin.market_cap} 
+                                currentPrice={coin.current_price} 
                                 priceChangePercentage={coin.price_change_percentage_24h} 
-                                />) 
-                            : 
-                        <div className={styles.spinnerGif}>
-                            <img src={snipperGif} alt='Snipper Gif' />
-                            <p> Loading... </p>
-                        </div>
-                    }
-                </div>
+                            />)
+                        }
+                    </div> : 
+                    
+                    <Loader />
+                }
         </>
     );
 }
