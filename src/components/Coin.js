@@ -7,12 +7,15 @@ import styles from '../styles/Coin.module.css';
 const Coin = ({ symbol, name, image, currentPrice, marketCap, priceChangePercentage}) => {
     return(
         <div className={styles.container}>
-            <img src={image} alt='Currency Logo' />
-            <p> {name} </p>
-            <p> {symbol.toUpperCase()} </p>
+            <div className={styles.logo_Name}>
+                <img className={styles.image} src={image} alt='Currency Logo' />
+                <p className={styles.name}> {name} </p>
+            </div>
+
+            <p className={styles.symbol}> {symbol.toUpperCase()} </p>
             <p> $ {currentPrice.toLocaleString()} </p>
-            <p> {priceChangePercentage} </p>
-            <p> {marketCap.toLocaleString()} </p>
+            <p className={(priceChangePercentage > 0)? styles.incPrice : styles.decPrice}> {priceChangePercentage} % </p>
+            <p> $ {marketCap.toLocaleString()} </p>
         </div>
     );
 }

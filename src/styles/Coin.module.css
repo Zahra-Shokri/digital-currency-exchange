@@ -1,3 +1,49 @@
 .container {
-    border: 1px solid silver;
+    width: 730px;
+    height: 30px;
+    display: flex;
+    padding: 25px 10px;
+    align-items: center;
+    justify-content: space-evenly;
+    border-bottom: 1px solid silver;
+}
+
+.container:last-child {
+    border: none;
+}
+  
+.logo_Name {
+    width: 160px;
+    display: flex;
+    align-items: center;
+}
+
+.container img {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+}
+
+.name {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.container p {
+    color: rgb(85, 85, 85);
+}
+
+.container p:not(.name) {
+    width: 120px;
+    font-size: 14px;
+}
+
+.incPrice {
+    color: green !important;
+    font-weight: bold;
+}
+
+.decPrice {
+    color: red!important;
+    font-weight: bold;
 }
